@@ -42,7 +42,11 @@ public class UserStory5 {
     public void click(String plusOption) {
         //filesPage.clickUpload(plusOption);
         BrowserUtil.waitFor(2);
-        filesPage.uploadFile.sendKeys("/Users/yuliiamashkina/Desktop/myTryCloud/src/test/resources/files/Screen_Shot_2021-11-01_at_11.47.32.png");
+        //filesPage.uploadFile.sendKeys("/Users/yuliiamashkina/Desktop/myTryCloud/src/test/resources/files/Screen_Shot_2021-11-01_at_11.47.32.png");
+        String projectDir = System.getProperty("user.dir");
+        // String path = "/Users/yuliiamashkina/Desktop/myTryCloud/src/test/resources/files/Screen_Shot_2021-11-01_at_11.47.32.png"
+        String file = "src/test/resources/files/Screen_Shot_2021-11-01_at_11.47.32.png";
+        filesPage.uploadFile.sendKeys(projectDir+"/"+file);
         BrowserUtil.waitFor(3);
     }
     @Then("Verify the file is displayed on the page")
